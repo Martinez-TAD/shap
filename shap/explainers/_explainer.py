@@ -132,22 +132,22 @@ class Explainer():
             # build the right subclass
             if algorithm == "exact":
                 self.__class__ = explainers.Exact
-                explainers.Exact.__init__(self, model, self.masker, link=self.link, feature_names=self.feature_names, **kwargs)
+                explainers.Exact.__init__(self, model, self.masker, link=self.link, **kwargs)
             elif algorithm == "permutation":
                 self.__class__ = explainers.Permutation
-                explainers.Permutation.__init__(self, model, self.masker, link=self.link, feature_names=self.feature_names, **kwargs)
+                explainers.Permutation.__init__(self, model, self.masker, link=self.link, **kwargs)
             elif algorithm == "partition":
                 self.__class__ = explainers.Partition
-                explainers.Partition.__init__(self, model, self.masker, link=self.link, feature_names=self.feature_names, output_names=self.output_names, **kwargs)
+                explainers.Partition.__init__(self, model, self.masker, link=self.link,  output_names=self.output_names, **kwargs)
             elif algorithm == "tree":
                 self.__class__ = explainers.Tree
-                explainers.Tree.__init__(self, model, self.masker, link=self.link, feature_names=self.feature_names, **kwargs)
+                explainers.Tree.__init__(self, model, self.masker, link=self.link, **kwargs)
             elif algorithm == "additive":
                 self.__class__ = explainers.Additive
-                explainers.Additive.__init__(self, model, self.masker, link=self.link, feature_names=self.feature_names, **kwargs)
+                explainers.Additive.__init__(self, model, self.masker, link=self.link,  **kwargs)
             elif algorithm == "linear":
                 self.__class__ = explainers.Linear
-                explainers.Linear.__init__(self, model, self.masker, link=self.link, feature_names=self.feature_names, **kwargs)
+                explainers.Linear.__init__(self, model, self.masker, link=self.link,  **kwargs)
             else:
                 raise Exception("Unknown algorithm type passed: %s!" % algorithm)
 
